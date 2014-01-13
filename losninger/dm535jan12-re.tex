@@ -1,0 +1,186 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[english]{babel}
+
+\usepackage{color}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fancyvrb}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.png}
+
+\title{DM535 eksamenssæt -- 13. januar/12 \\ \rule{10cm}{0.5mm}}
+\author{Studiegruppe F \\ Section S7 \\
+DM535\\\rule{5.5cm}{0.5mm}\\}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\vfill
+
+\tableofcontents
+
+\newpage
+
+\section{Bijektion, invers, $f+g$, $g \circ f$ og $f \circ g$}
+\begin{align*}
+f(x) &= x^2	+x+1\\
+g(x) &= 2x-2
+\end{align*}
+\subsection*{Er $f(x)$ en bijektion?}
+Funktionen $f(x)$ ikke er bijektiv, da funktionen ikke er injektiv og surjektiv.
+\subsection*{Har $f(x)$ en invers funktion?}
+Da funktionen $f(x)$ ikke er bijektiv, kan den heller ikke have en invers.
+\subsection*{Beregn $f+g$}
+\begin{align*}
+(x^2+x+1)+(2x-2) = x^2+3x-1
+\end{align*}
+\subsection*{Bergen $f\circ g$}
+\begin{align*}
+(2x-2)^2+(2x-2)+1 = (4x^2+4-8x)+2x-1 = 4x^2-6x+3
+\end{align*}
+\subsection*{Beregn $g \circ f$}
+\begin{align*}
+2(x^2+x+1)-2 = (2x^2+2x+2)-2 = 2x^2+2x 
+\end{align*}
+\section{Udsagn $P$ og $Q$ og negering}
+\begin{align*}
+P:\exists x \in \N &: \forall y \in \N: x=y\\
+Q:\forall x \in \N &: \exists y \in \N: x=y
+\end{align*}
+\subsection*{Er udsagn $P$ sandt?}
+Udsagn $P$ er falsk, da udsagnet betyder, at vi for ét enkelt $x$ tilhørende de naturlige tal, skal kunne få alle $y$ tilhørende de naturlige tal. Hvis vi sætter $x = 1$ og $y\neq 1$ vil udsagnet ikke holde.
+\subsection*{Er udsagn $Q$ sandt?}
+Udsagn $Q$ er sandt, da udsagnet betyder, at der for alle $x$, tilhørende de naturlige tal, eksisterer mindst ét $y$ tilhørende de naturlige tal. Lad os tage et vilkårligt naturligt tal og kalde det vores $y$. Det vil her være muligt at sætte $x$ til at være netop det helt samme naturlige tal.
+\subsection*{Negering af $P$}
+\begin{align*}
+P:\exists x \in \N &: \forall y \in \N: x=y\\
+\neg P:\neg (\exists x \in \N &: \forall y \in \N: x=y)
+\end{align*}
+Ved brug af De Morgan's love for kvantorer, kan vi flytte negeringen forbi vores kvantorer. Så vi ved at $\neg (\exists x \in \N : \forall y \in \N: x=y)$ er ækvivalent med $\forall x \in \N : \neg (\forall y \in \N: x=y)$ som er ækvivalent med $\forall x \in \N : \exists y \in \N: \neg(x=y)$ som til sidst giver os, $\forall x \in \N : \exists y \in \N: x\neq y$.
+\section{Talteori, indbyrdes primiske og kongruensen}
+\subsection*{Hvilket par er indbyrdes primske?}
+$(1)$ $15$ og $16\\
+(2)$ $15$ og $20\\
+(3)$ $15$ og $30$\\
+For at finde det indbyrdes primske par, skal vi se hvilket par hvor kun $-1$ og $1$ går op i begge tal. Dette er ret nemt da f.eks. $5$ går op i begge tal i måde par nr. $2$ og par nr. $3$. Så det rigtige svar er par nr. $1$.\\\\
+Tal der går op i 15 = $\{1,3,5,15\}$\\
+Tal der går op i 16 = $\{1,2,4,8,16\}$
+\subsection*{Angiv mindste positive heltal $x$ som opfylder kongruensen}
+\begin{center}
+$5x \equiv 1$ (mod $7$)
+\end{center}
+Det mindste heltal er $3$ da
+\begin{align*}
+5(1) \equiv 5 \,(mod \,7)\\
+5(2) \equiv 3 \,(mod \,7)\\
+5(3) \equiv 1 \,(mod \,7)
+\end{align*}
+\section{Binære relation}
+\begin{align*}
+R = \{(a,b)|b=a^2 \vee a = b^2 \}
+\end{align*}
+\subsection*{Angiv samtlige elementer i $R$}
+Samtlige elementer i R: $\{(0,0),\,(1,1),\,(2,4),\,(3,9),\,(4,2),\, (9,3)\}$\\
+\subsection*{Er $R$ refleksiv?}
+For at R skulle være refleksiv, skal det gælde at: \begin{center}
+$\forall a\in A : (a,a) \in R)$\\
+\end{center} 
+Dette er ikke tilfældet, da der mangler $\{(2,2)\}$\\
+\subsection*{Er $R$ symetrisk?}
+Hvis R skulle være symetrisk, skal det gælde at:
+\begin{center}
+$\forall a\in A : \forall b\in A : (a, b) \in R \Rightarrow (b, a) \in R$\\ 
+\end{center}
+Dette er tilfældet, da der i definationen på R, kun kan forekomme elementer, hvor $(a,b)$ enten er ens, eller hvor $(a,b)$ har en partner som er $(b,a)$.
+\subsection*{Er $R$ transaktiv?)}
+For at R er transaktiv, skal det gælde at:
+\begin{center}
+$\forall a\in A : \forall b \in A : \forall c \in A :  (a,b) \in R\, \wedge \, (b,c) \in R \Rightarrow (a,c) \in R
+$
+\end{center}
+R er ikke transaktiv, da følgende elementer mangler: $\{(2,2)\}$\\R kunne også havde været transaktiv hvis elementerne $\{(4,2),\,(9,3)\} \vee \{(2,4,\,(3,9)\}$ ikke eksisterede.
+\subsection*{Er $R$ en ækvivalensrelation?)}
+For at R skulle være en ækvivalensrelation, skulle R både være refleksiv, symetrisk og transaktiv. Da R kun er symetrisk er dette ikke tilfældet.
+\section{Matrice}
+$A = \begin{bmatrix}
+1&1\\1&1
+\end{bmatrix}
+$
+\subsection*{Beregn $A^2$}
+\begin{center}
+
+$\begin{bmatrix}
+(1\cdot1)+(1\cdot1)& (1\cdot1)+(1\cdot1)\\
+(1\cdot1)+(1\cdot1)&(1\cdot1)+(1\cdot1)
+\end{bmatrix}
+$
+$ A^2 =$ 
+$\begin{bmatrix}
+2&2\\2&2
+\end{bmatrix}
+$
+
+\end{center}\newpage
+\subsection*{b)}
+Vis at $A^n \begin{bmatrix}
+2^{n-1}&2^{n-1}\\2^{n-1}&2^{n-1}
+\end{bmatrix}$\\\\
+Matricen kalder vi for $P(n)$
+\\\\Basisskridt:
+
+$P(1):$\\\begin{center}
+$A^1=\begin{bmatrix}
+1&1\\1&1
+\end{bmatrix}
+$
+\end{center}
+Vi antager at $P(n)$ gælder og, at $P(n) \rightarrow P(n+1)$\\
+$P(n+1)$
+\begin{center}
+$A^{n+1} = \begin{bmatrix}
+2^n&2^n\\2^n&2^n
+\end{bmatrix}$
+\end{center}
+Induktionsskridt:
+
+Jeg vil nu vise at $P(n) \rightarrow P(n+1)$\\\begin{align*}
+A^n\cdot A &= A^{n+1}\\
+\begin{bmatrix}
+2^{n-1}&2^{n-1}\\2^{n-1}&2^{n-1}
+\end{bmatrix} \cdot \begin{bmatrix}
+1&1\\1&1
+\end{bmatrix} &= \begin{bmatrix}
+2^n&2^n\\2^n&2^n\\
+\end{bmatrix}\\
+\begin{bmatrix}
+2^{n-1}+2^{n-1}&2^{n-1}+2^{n-1}\\2^{n-1}+2^{n-1}&2^{n-1}+2^{n-1}
+\end{bmatrix} &= \begin{bmatrix}
+2^n&2^n\\2^n&2^n
+\end{bmatrix}\\
+\begin{bmatrix}
+2\cdot 2^{n-1}&2\cdot 2^{n-1}\\2\cdot 2^{n-1}&2\cdot 2^{n-1}
+\end{bmatrix}&= \begin{bmatrix}
+2^n&2^n\\2^n&2^n
+\end{bmatrix}\\
+\begin{bmatrix}
+2^n&2^n\\2^n&2^n
+\end{bmatrix}&= \begin{bmatrix}
+2^n&2^n\\2^n&2^n
+\end{bmatrix}\\
+\end{align*}
+$\hfill\blacksquare
+$
+\end{document}
