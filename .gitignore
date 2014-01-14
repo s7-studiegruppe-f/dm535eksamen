@@ -32,3 +32,4 @@
 *.tdo
 output.tex
 output.pdf
+*.pyc
